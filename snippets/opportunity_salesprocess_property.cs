@@ -1,4 +1,13 @@
-    public static partial class OpportunityBusinessRules
+    
+	//Client wanted to display the Opportunity Salesprocess on the Account and Contact opportunity tabs.
+	//Originally, I tried creating a relationship from Opportunity to the SalesProcesses entity.  This
+	//was an issue because there could be more than one record in the Salesprocesses table with an entityid for 
+	//a given opportunity.
+	
+	//Instead, I've created a code snippet property in opportunity to display the most recent salesprocesses record 
+	//for the opportunity.
+	
+	public static partial class OpportunityBusinessRules
     {
         public static void GetSalesProcessStep( IOpportunity opportunity, out System.String result)
         {
